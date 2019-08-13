@@ -3,5 +3,10 @@ os: windows
 install:
   - powershell Install-WindowsFeature Net-Framework-Core
   - choco install wixtoolset -y
-  - wget https://www.wintun.net/builds/wintun-amd64-0.6.msm
-  - wget https://www.wintun.net/builds/wintun-x86-0.6.msm
+  - curl -o wintun-amd64-0.6.msm https://www.wintun.net/builds/wintun-amd64-0.6.msm
+  - curl -o wintun-x86-0.6.msm https://www.wintun.net/builds/wintun-x86-0.6.msm
+script:
+  - candle amd64.wxs -out amd64.wixobj
+  - candle x86.wxs -out x86.wixobj
+  - light amd64.wixobj -out amd64.msi
+  - light x86.wixobj -out x86.msi
