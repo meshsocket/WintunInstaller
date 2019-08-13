@@ -8,7 +8,7 @@ install:
   - curl -o wintun-amd64-0.6.msm https://www.wintun.net/builds/wintun-amd64-0.6.msm
   - curl -o wintun-x86-0.6.msm https://www.wintun.net/builds/wintun-x86-0.6.msm
 script:
-  - "$WIXBIN/candle" amd64.wxs -out amd64.wixobj
-  - "$WIXBIN/candle" x86.wxs -out x86.wixobj
-  - "$WIXBIN/light" amd64.wixobj -out amd64.msi
-  - "$WIXBIN/light" x86.wixobj -out x86.msi
+  - '"$WIXBIN/candle" amd64.wxs -out amd64.wixobj'
+  - '"$WIXBIN/candle" x86.wxs -out x86.wixobj'
+  - '"$WIXBIN/light" amd64.wixobj -out amd64.msi'
+  - '"$WIXBIN/light" x86.wixobj -out x86.msi'
