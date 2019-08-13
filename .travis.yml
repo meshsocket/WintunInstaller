@@ -1,0 +1,6 @@
+language: bash
+os: windows
+install:
+  - choco install wixtoolset -y
+  - wget https://www.wintun.net/builds/wintun-amd64-0.6.msm
+  - wget https://www.wintun.net/builds/wintun-x86-0.6.msm

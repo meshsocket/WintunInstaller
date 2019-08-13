@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="93731DA9-0474-464A-BDC0-EB85E8743B16" Name="Wintun" Language="1033" Version="0.6.0" Manufacturer="Wireguard Project" UpgradeCode="FC7F4B49-B202-467B-8D13-618EC7D003E4">
+        <Package Description="Install Wintun" Comments="Install Wintun" InstallerVersion="200" Compressed="yes" Platform="x86" />
+        <Media Id="1" Cabinet="wintun.cab" EmbedCab="yes" />
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Merge Id="wintun" Language="0" SourceFile=".\wintun-x86-0.6.msm" DiskId="1" />
+        </Directory>
+        <Feature Id="DefaultFeature" Title="Main Feature" Level="1">
+            <MergeRef Id="wintun" Primary="yes" />
+        </Feature>
+        <UI />
+    </Product>
+</Wix>
