@@ -1,14 +1,14 @@
 language: bash
 os: windows
 env:
-  - WIXBIN="c:\\Program Files (x86)\\WiX Toolset v3.11\\bin"
+  - WIXBIN="c:/Program Files (x86)/WiX Toolset v3.11/bin"
 install:
   - powershell Install-WindowsFeature Net-Framework-Core
   - choco install wixtoolset --version 3.11.1 -y
   - curl -o wintun-amd64-0.6.msm https://www.wintun.net/builds/wintun-amd64-0.6.msm
   - curl -o wintun-x86-0.6.msm https://www.wintun.net/builds/wintun-x86-0.6.msm
 script:
-  - $WIXBIN/candle amd64.wxs -out amd64.wixobj
-  - $WIXBIN/candle x86.wxs -out x86.wixobj
-  - $WIXBIN/light amd64.wixobj -out amd64.msi
-  - $WIXBIN/light x86.wixobj -out x86.msi
+  - "$WIXBIN/candle" amd64.wxs -out amd64.wixobj
+  - "$WIXBIN/candle" x86.wxs -out x86.wixobj
+  - "$WIXBIN/light" amd64.wixobj -out amd64.msi
+  - "$WIXBIN/light" x86.wixobj -out x86.msi
