@@ -14,7 +14,8 @@ script:
   - '"$WIXBIN/light" x86.wixobj -out wintun-x86-0.6.msi'
 deploy:
   provider: releases
-  api_key: $GITHUB_OAUTH_TOKEN
+  api_key: "$GITHUB_OAUTH_TOKEN"
+  overwrite: true
   file:
     - wintun-amd64-0.6.msi
     - wintun-x86-0.6.msi'
