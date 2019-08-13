@@ -1,6 +1,7 @@
 language: bash
 os: windows
 install:
+  - powershell Install-WindowsFeature Net-Framework-Core
   - choco install wixtoolset -y
   - wget https://www.wintun.net/builds/wintun-amd64-0.6.msm
   - wget https://www.wintun.net/builds/wintun-x86-0.6.msm
